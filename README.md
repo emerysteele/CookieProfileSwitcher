@@ -11,7 +11,7 @@ The extension at it's core is fairly simple. It takes advantage of Google Chrome
 
 
 ## License Info
-This work is licensed under a Creative Commons Attribution 4.0 License.
+This work is licensed under a GNU General Public License v3.0.
 
 This extension uses the following open-source projects:
 
