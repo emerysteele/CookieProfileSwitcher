@@ -1,7 +1,7 @@
 # About
 Cookie Profile Switcher allows you to easily manage multiple cookie sessions for all of your websites! No more logging out & logging in, just to switch your user profile. This is a MUST have for people who manage multiple social media profiles, emails or eCommerce accounts. Simply create a new profile in the extension, login to your user account, then you can switch between your profiles with ease.
 
-If you've got questions, bugs to report or requests for new features, please contact me via email at emerysteele@gmail.com
+If you've got questions, bugs to report or requests for new features, please contact me via email at emerysteele [at] gmail.com
 
 
 # How it Works
