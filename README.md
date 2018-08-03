@@ -15,10 +15,10 @@ This work is licensed under a Creative Commons Attribution 4.0 License.
 
 This extension uses the following open-source projects:
 
-..* jQuery
-..* Bootstrap
-..* Font Awesome
-..* Showdown
+* jQuery
+* Bootstrap
+* Font Awesome
+* Showdown
 
 ## Analytics
 This extension uses Google Analytics to gather a small amount of anonymous usage data. This data includes: browser version, number of sessions per user, and average session length. Personal information like your profile or cookie data will not be tracked. Ever. The usage information is used to improve the usability of extension & help with bug fixes.
