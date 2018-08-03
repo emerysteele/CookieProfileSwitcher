@@ -1,5 +1,8 @@
 # Cookie Profile Switcher
 
+## Install
+Install through the Chrome Webstore at: https://chrome.google.com/webstore/detail/cookie-profile-switcher/dicajblfgcpecbkhkjaljphlmkhohelc
+
 ## About
 Cookie Profile Switcher allows you to easily manage multiple cookie sessions for all of your websites! No more logging out & logging in, just to switch your user profile. This is a MUST have for people who manage multiple social media profiles, emails or eCommerce accounts. Simply create a new profile in the extension, login to your user account, then you can switch between your profiles with ease.
 
