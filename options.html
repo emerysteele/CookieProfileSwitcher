@@ -1,0 +1,107 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Cookie Profile Switcher</title>
+	<meta charset="utf-8" />
+	
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
+	<link rel="stylesheet" type="text/css" href="css/options.css" />
+	
+	
+	<script src="scripts/jquery-3.1.1.min.js"></script>
+	<script src="scripts/bootstrap.min.js"></script>
+	<script src="scripts/showdown.min.js"></script>
+	<script src="scripts/browser-functions.js"></script>
+	<script src="options.js"></script>
+</head>
+
+<body onbeforeunload="">
+	<div class="container">
+		<h1><img src="cookie.png" alt="" style="width: 64px; height: 64px;" /> Cookie Profile Switcher</h1>
+		
+		<a id="donate-button" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MNLRFA5B6CB4N" target="_blank"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" alt="Donate" alt="PayPal - The safer, easier way to pay online!"/></a>
+		
+
+		<hr />
+		
+		<!--<div class="alert alert-warning">
+    		<strong>Important:</strong> </a>.
+		</div>-->
+		
+		<div class="tabbable tabs-left">
+			<ul id="menu" class="nav nav-tabs" style="margin-top: 40px; height: 450px;">
+				<li class="active"><a href="#about" data-toggle="tab" data-message="settingsGroupHelp">About</a></li>
+				<li><a href="#data" data-toggle="tab">Data</a></li>
+				<li><a href="#changelog" data-toggle="tab">Changelog</a></li>
+			</ul>
+			<div class="tab-content">
+				<div class="tab-pane fade in active form-horizontal" id="about">
+					<fieldset>
+						<legend data-message="settingsGroupAbout">About</legend>
+						
+						<p>Cookie Profile Switcher allows you to easily manage multiple cookie sessions for all of your websites! No more logging out & logging in, just to switch your user profile. This is a MUST have for people who manage multiple social media profiles, emails or eCommerce accounts. Simply create a new profile in the extension, login to your user account, then you can switch between your profiles with ease.</p>
+						<p>If you've got questions, bugs to report or requests for new features, please contact me via email at <a href="#" id="send-email">emerysteele@gmail.com</a></p>
+						
+						<br >
+						<h4>How it Works</h4>
+						
+						<p>The extension at it's core is fairly simple. It takes advantage of Google Chrome Extension's cookie & storage APIs. When a new profile is created, the profile name is stored in Google Chrome's local storage. Then when you switch to another profile, the cookie data for the website on the active tab is saved to the previous profile; And the cookie data from the local storage is loaded into the cookie store, effectively swapping the cookies.</p>
+						
+						<br>
+						
+						
+						<h4>License Info</h4>
+						
+						<p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 License</a>.</p>
+						
+						<p>This extension uses the following open-source projects:</p>
+						
+						<ul>
+							<li><a href="https://jquery.com/" target="_blank">jQuery</a></li>
+							<li><a href="http://getbootstrap.com/" target="_blank">Bootstrap</a></li>
+							<li><a href="http://fontawesome.io/" target="_blank">Font Awesome</a></li>
+							<li><a href="https://github.com/showdownjs/showdown" target="_blank">Showdown</a></li>
+						</ul>
+						<br >
+						<h4>Analytics</h4>
+						<p>This extension uses Google Analytics to gather a small amount of anonymous usage data. This data includes: browser version, number of sessions per user, and average session length. Personal information like your profile or cookie data will <b>not</b> be tracked. Ever. The usage information is used to improve the usability of extension & help with bug fixes.</p>
+						
+					</fieldset>
+				</div>
+				<div class="tab-pane fade in" id="data">
+					<fieldset id="data-content">
+					<legend data-message="settingsGroupData">Data</legend>
+					<h4>Profiles JSON Data Blob</h4>
+					<div class="alert alert-warning">
+						<strong>Warning: Modifying this data could potentially cause issues with your profiles or the extension. Make sure you know what you are doing, or at least export your data first! If all else fails, you can clear your profile data using the button below & start over.</strong>
+					</div>
+					<textarea id="profile-data-textarea" style="width:100%;height:500px;max-width:100%;"></textarea>
+					<button id="save-profile-data" class="btn btn-primary">Save</button> <button id="import-profile-data" class="btn btn-info">Import</button> <button id="export-profile-data" class="btn btn-info">Export</button> <button id="clear-profile-data" class="btn btn-warning">Clear Profile Data</button> <!--<button id="clear-cookie-data" class="btn btn-default">Delete Stored Cookies</button>--><br ><br>
+					<input type="file" id="import-profile-data-input" accept=".json" style="display:none"/>
+					<!--<h4>Site Data</h4>
+					<table id="site-data-table" class="table table-responsive table-striped">
+					<thead>
+						<td>Site</td>
+						<td>JSON Data</td>
+					</thead>
+					<tbody>
+					
+					</tbody>
+					</table>-->
+					</fieldset>
+				</div>
+				<div class="tab-pane fade in" id="changelog">
+					<fieldset id="changelog-content"></fieldset>
+				</div>
+			</div>
+		</div>
+		
+		<hr />
+		
+		<div class="text-center muted"><small>Version <span id="about-extension-version"></span></small></div>
+	</div>
+</body>
+
+</html>
