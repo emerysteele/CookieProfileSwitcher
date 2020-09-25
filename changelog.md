@@ -1,7 +1,9 @@
 # Changelog
+## 1.3.3
+- Extension was broken. Update code to remove leading '.' from url that was introduced with chrome api update.
+
 ## 1.3.2
 - Fixed bug that prevented extension from working on certain https-only websites.
-
 
 ## 1.3
 - Added Data tab to Options Page, allowing users to view, edit, & delete their profile data.
