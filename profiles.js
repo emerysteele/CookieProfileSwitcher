@@ -1,10 +1,20 @@
+var debugMode = false;
+
 var url, tab, currentDomain;
 var origProfileTable = "";
+
+//CONSOLE LOG CONTROLLER //
+function debugLog(logData){
+	if(debugMode == true){
+		console.log(logData);
+	}
+}
 
 // BEGIN DOMAIN FUNCTIONS //
 function getHostName(url) {
     var match = url.match(/:\/\/(www[0-9]?\.)?(.[^/:]+)/i);
     if (match != null && match.length > 2 && typeof match[2] === 'string' && match[2].length > 0) {
+		debugLog(match[2]);
     return match[2];
     }
     else {
@@ -26,7 +36,7 @@ function getDomain(url) {
             }
         }
     }
-    
+    debugLog(domain);
     return domain;
 }
 // END DOMAIN FUNCTIONS //
@@ -55,7 +65,7 @@ function addProfileListeners(){
 function editProfile(event){
 	var target = event.target;
 	var oldProfileName = target.getAttribute('data-profileName');
-	console.log("Clicked");
+	debugLog("Clicked");
 	$(target).html("save");
 	$(target).parent().parent().parent().find('.changeProfile').hide();
 	$(target).parent().parent().parent().find('.profileLabel').hide();
@@ -88,7 +98,7 @@ function saveProfileName(event){
 		}
 		else{
 			profile = items.profiles;
-			console.log(JSON.stringify(profile));
+			debugLog(JSON.stringify(profile));
 			domainProfile = profile[currentDomain];
 		}
 		if (target.getAttribute('data-profileName') !== $(target).parent().parent().parent().find('input').text()) {
@@ -299,10 +309,11 @@ function changeProfile(event){
 			}
 			
 			if(newProfileData.length > 0){for (var i=0; i<newProfileData.length;i++){
-				newProfileData[i]['url'] = "http" + (newProfileData[i]['secure'] ? "s" : "") + "://" + newProfileData[i]['domain'];
+				newProfileData[i]['url'] = "http" + (newProfileData[i]['secure'] ? "s" : "") + "://" + newProfileData[i]['domain'].replace(/^\./, "");
+				debugLog(newProfileData[i]['domain']);
 				delete newProfileData[i]['hostOnly'];
 				delete newProfileData[i]['session'];
-				console.log(JSON.stringify(newProfileData[i]));
+				debugLog(JSON.stringify(newProfileData[i]));
 				chrome.cookies.set(newProfileData[i]);
 			}}
 			
