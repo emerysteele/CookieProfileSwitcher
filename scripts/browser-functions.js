@@ -47,7 +47,7 @@ var extension = {};
 		
 		// Chrome
 		else if(IS_CHROME) {
-			var details = chrome.app.getDetails();
+			var details = chrome.runtime.getManifest();
 			extension._version = details.version;
 		}
 		return extension._version;
