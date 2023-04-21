@@ -330,9 +330,16 @@ function changeProfile(event){
 			
 			chrome.tabs.query({active: true, currentWindow: true}, function (arrayOfTabs) {
 				var code = 'window.location.reload();';
-				chrome.tabs.executeScript(arrayOfTabs[0].id, {code: code});
+				
+				// manifest v2
+				// chrome.tabs.executeScript(arrayOfTabs[0].id, {code: code});
+
+				// manifest v3
+				chrome.scripting.executeScript({
+					target: {tabId: arrayOfTabs[0].id},
+					func: ()=>{window.location.reload();}
+				});
 			});
-			
 		});
 		
 	});

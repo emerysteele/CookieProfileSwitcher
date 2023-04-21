@@ -31,3 +31,27 @@ chrome.browserAction.onClicked.addListener(function(tab) {
   var manager_url = chrome.extension.getURL("manager.html");
   focusOrCreateTab(manager_url);
 });*/
+
+chrome.runtime.onStartup.addListener(function () {
+  createOffscreen();
+});
+
+chrome.runtime.onInstalled.addListener(function () {
+  createOffscreen();
+});
+
+// Use offscreen API to keep service worker alive
+// Ref: https://stackoverflow.com/questions/66618136/persistent-service-worker-in-chrome-extension/66618269#66618269
+// create the offscreen document if it doesn't already exist
+async function createOffscreen() {
+  if (await chrome.offscreen.hasDocument?.()) return;
+  await chrome.offscreen.createDocument({
+    url: 'offscreen.html',
+    reasons: ['BLOBS'],
+    justification: 'keep service worker running',
+  });
+}
+// a message from an offscreen document every 20 second resets the inactivity timer
+chrome.runtime.onMessage.addListener(msg => {
+  if (msg.keepAlive) console.log('keepAlive');
+});
